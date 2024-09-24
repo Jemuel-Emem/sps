@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="mt-4 text-3xl font-bold text-gray-900">
-            120
+            {{ $appointmentsCount }}
         </div>
         <p class="mt-2 text-sm text-gray-500">Total Appointments</p>
     </div>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="mt-4 text-3xl font-bold text-gray-900">
-            75
+            {{ $schedulesCount }}
         </div>
         <p class="mt-2 text-sm text-gray-500">Total Schedules</p>
     </div>
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="mt-4 text-3xl font-bold text-gray-900">
-            230
+            {{ $usersCount }}
         </div>
         <p class="mt-2 text-sm text-gray-500">Total Users</p>
     </div>

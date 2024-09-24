@@ -113,12 +113,12 @@
                 </li>
 
 
-                <li>
+                {{-- <li>
                     <a href="" class="flex items-center p-2 rounded-lg hover:bg-gray-700">
                         <i class="text-red-500 ri-search-eye-fill"></i>
                         <span class="ms-3 text-gray-500">Users</span>
                     </a>
-                </li>
+                </li> --}}
 
 
             </ul>
