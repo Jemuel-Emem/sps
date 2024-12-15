@@ -1,12 +1,17 @@
+<?php
+
 use App\Http\Middleware\admin;
 use App\Http\Middleware\user;
+use App\Http\Controllers\authlogout;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-// Show the login view when the root URL is accessed
-Route::view('/', 'login')->name('login');
+ Route::view('/', 'welcome')->name('welcome');
 
-// Dashboard Route - Redirect based on user role (admin or regular user)
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         if (Auth::user()->is_admin == 1) {
@@ -17,7 +22,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 });
 
-// Admin Routes
+
 Route::prefix('admin')->middleware(['auth', admin::class])->group(function () {
     Route::get('/Admindashboard', function () {
         return view('admin.index');
@@ -27,13 +32,15 @@ Route::prefix('admin')->middleware(['auth', admin::class])->group(function () {
         return view('admin.appointments');
     })->name('apps');
 
+
     Route::post('/logout', function () {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect('/login');
     })->name('logouts');
+
 });
 
-// User Routes
+
 Route::prefix('user')->middleware(['auth', user::class])->group(function () {
     Route::get('/dashboard', function () {
         return view('user.index');
@@ -43,15 +50,22 @@ Route::prefix('user')->middleware(['auth', user::class])->group(function () {
         return view('user.appointment');
     })->name('appointment');
 
+    Route::get('/status', function () {
+        return view('user.status');
+    })->name('statuss');
+
+
     Route::post('/logout', function () {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect('/login');
     })->name('logout');
+
 });
 
-// Profile Route
+
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
+
 
 require __DIR__.'/auth.php';
