@@ -4,6 +4,7 @@ namespace App\Livewire\Admin;
 
 use App\Models\Appointment;
 use App\Models\User;
+use App\Models\File; // Add this import for File model
 use Livewire\Component;
 
 class Index extends Component
@@ -11,6 +12,7 @@ class Index extends Component
     public $appointmentsCount;
     public $usersCount;
     public $schedulesCount;
+    public $approvedFilesCount; // Add a property for the approved files count
 
     public function mount()
     {
@@ -22,6 +24,9 @@ class Index extends Component
 
         // Count the number of schedules (appointments) that are approved
         $this->schedulesCount = Appointment::where('status', 'approved')->count();
+
+        // Count the number of approved files
+        $this->approvedFilesCount = File::where('status', 'approved')->count(); // Query for approved files
     }
 
     public function render()

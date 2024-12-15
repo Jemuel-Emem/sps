@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EHR</title>
+    <title>REPOSITORY</title>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
@@ -17,11 +17,11 @@
     @wireUiScripts
     <style>
         body {
-            background-color: #F0FFF4; /* Light green background */
+            background-color: #E3F2FD; /* Light blue background */
             font-family: 'Arial', sans-serif;
         }
         .sidebar {
-
+            background-color: #2196F3; /* Primary blue */
             color: white;
         }
         .sidebar img {
@@ -36,11 +36,11 @@
             font-size: 1.25rem;
         }
         .sidebar ul li a {
-            color: #E8F5E9; /* Light green */
+            color: #BBDEFB; /* Light blue */
             transition: background-color 0.3s;
         }
         .sidebar ul li a:hover {
-            background-color: #388E3C; /* Darker green */
+            background-color: #1976D2; /* Darker blue */
             border-radius: 0.5rem;
         }
         .sidebar ul li a i {
@@ -71,7 +71,7 @@
             position: fixed;
             top: 1rem;
             right: 1rem;
-            background-color: #66BB6A; /* Medium green */
+            background-color: #64B5F6; /* Medium blue */
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
@@ -80,9 +80,10 @@
             transition: background-color 0.3s;
         }
         .logout-button:hover {
-            background-color: #4CAF50; /* Bright green on hover */
+            background-color: #42A5F5; /* Brighter blue on hover */
         }
     </style>
+
 </head>
 <body class="bg-green-light">
     <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
@@ -95,20 +96,20 @@
     <aside id="sidebar-multi-level-sidebar" class="sidebar fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0  bg-green-200" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto">
             <div class="text-center flex flex-col items-center">
-                <img src="{{asset('images/logo.png')}}" alt="Admin">
-                <div class="font-bold  text-2xl text-red-500">SPS</div>
+                <img src="{{asset('images/iconrepo.png')}}" alt="Admin">
+                <div class="font-bold  text-2xl text-red-500">REPOSITORY</div>
             </div>
             <ul class="space-y-2 font-medium mt-4">
                 <li>
                     <a href="{{route('Admindashboard')}}" class="flex items-center p-2 rounded-lg hover:bg-gray-700">
                         <i class="text-red-500 ri-dashboard-fill"></i>
-                        <span class="ms-3 text-gray-500">Dashboard</span>
+                        <span class="ms-3 text-white">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('apps')}}" class="flex items-center p-2 rounded-lg hover:bg-gray-700">
+                    <a href="{{route('uploadss')}}" class="flex items-center p-2 rounded-lg hover:bg-gray-700">
                         <i class="text-red-500 ri-file-add-fill"></i>
-                        <span class="ms-3 text-gray-500">Appointments</span>
+                        <span class="ms-3 text-white">Upload Files</span>
                     </a>
                 </li>
 
