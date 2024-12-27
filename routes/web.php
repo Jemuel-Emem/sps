@@ -6,11 +6,11 @@ use App\Http\Controllers\authlogout;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-<<<<<<< HEAD
+
  Route::view('/', 'welcome')->name('welcome');
-=======
+
 // Route::view('/', 'login')->name('login');
->>>>>>> 968c971b630baea5aead13d36508fd53039bed05
+
 
 // Route::view('dashboard', 'dashboard')
 //     ->middleware(['auth', 'verified'])
@@ -55,11 +55,11 @@ Route::prefix('user')->middleware(['auth', user::class])->group(function () {
         return view('user.appointment');
     })->name('appointment');
 
-<<<<<<< HEAD
+
     Route::get('/status', function () {
         return view('user.status');
     })->name('statuss');
-=======
+
     Route::get('/files', function () {
         return view('user.files');
     })->name('fil');
@@ -67,7 +67,7 @@ Route::prefix('user')->middleware(['auth', user::class])->group(function () {
     Route::get('/upload', function () {
         return view('user.upload');
     })->name('uploads');
->>>>>>> 968c971b630baea5aead13d36508fd53039bed05
+
 
 
     Route::post('/logout', function () {
